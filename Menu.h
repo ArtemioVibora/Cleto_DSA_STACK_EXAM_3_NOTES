@@ -7,7 +7,7 @@
 
 class Menu {
 public:
-    void displayMenu(int count) const;
+    void displayMenu() const;
     int valuePrompt();
     int choicePrompt(int amountChoices);
 };
