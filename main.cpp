@@ -42,6 +42,44 @@ int peek(Node* top) {
     return value;
 }
 
-int main() {
+void runProgram() {
+    Node* top = NULL;
+    Menu menu;
 
+    int choice;
+    int value;
+
+
+    bool running = true;
+
+    while (running) {
+        menu.displayMenu();
+        choice = menu.choicePrompt();
+        switch (choice) {
+            case 1:
+                value = menu.valuePrompt();
+                push(&top, value);
+                break;
+            case 2:
+                value = pop(&top);
+                cout << "The value popped: " << value << endl;
+                break;
+            case 3:
+                value = peek(top);
+                cout << "The value peeked: " << value << endl;
+                break;
+            case 4:
+                running = false;
+                break;
+            default:
+                cout << "Invalid choice" << endl;
+                break;
+        }
+
+
+    }
+}
+
+int main() {
+    runProgram();
 }

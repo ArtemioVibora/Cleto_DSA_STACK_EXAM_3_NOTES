@@ -10,9 +10,9 @@ void Menu::displayMenu() const{
     cout << "<1> Push" << endl;
     cout << "<2> Pop" << endl;
     cout << "<3> Peek" << endl;
-    cout << "<4> Clear" << endl;
+    cout << "<4> Exit" << endl;
     cout << "------------------------------------" << endl;
-    cout << ">>>> " << endl;
+    cout << ">>>> ";
 }
 
 int Menu::valuePrompt() {
@@ -27,9 +27,9 @@ int Menu::valuePrompt() {
     return value;
 }
 
-int Menu::choicePrompt(int amountChoices) {
+int Menu::choicePrompt() {
     int choice;
-    while (!(cin >> choice) || choice > amountChoices) {
+    while (!(cin >> choice)) {
         cin.clear();
         cin.ignore(80, '\n');
         cout << "Please enter a valid choice: ";
