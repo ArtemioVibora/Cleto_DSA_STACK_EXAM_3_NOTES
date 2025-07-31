@@ -62,11 +62,13 @@ void runProgram() {
                 break;
             case 2:
                 value = pop(&top);
-                cout << "The value popped: " << value << endl;
+                if (value == -1) cout << "List is empty" << endl;
+                else cout << "The value popped: " << value << endl;
                 break;
             case 3:
                 value = peek(top);
-                cout << "The value peeked: " << value << endl;
+                if (value == -1) cout << "List is empty" << endl;
+                else cout << "The value peeked: " << value << endl;
                 break;
             case 4:
                 running = false;
@@ -75,8 +77,6 @@ void runProgram() {
                 cout << "Invalid choice" << endl;
                 break;
         }
-
-
     }
 }
 
